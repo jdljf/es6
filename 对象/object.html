@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // Object 将参数变成对象
+        console.log(Object(1))
+        console.log(Object(true))
+        // Object.is 判断两个值是否相等
+        // Object.is('值1', '值2')
+        // === NaN 跟 NaN 不等， -0 ===0
+        // 其他和 === 相等
+        console.log(NaN === NaN );
+        console.log( -0 === 0);
+        console.log(Object.is(NaN, NaN));
+        console.log(Object.is(-0, 0));
+        
+        // Object.assign 合并对象
+        let obj1 = {name: '珠峰'}
+        let obj2 = {age: 10}
+        Object.assign(obj1, obj2)
+        console.log(obj1);
+        
+        // es7中对象中的合并
+        let school = {...obj1, ...obj2}
+        console.log(school);
+        
+        // Object.getOwnPropertyDescriptor 获取一个对象某个属性的描述
+
+
+        // Object.keys()   // 返回值 [所有可枚举的属性]
+        console.log(Object.keys(school))
+        // Object.values()  // 返回 [所有可枚举的属性的键值]
+        console.log(Object.values(school))
+        // Object.entries() // 返回 [[键, 值]]
+        console.log(Object.entries(school));
+        
+    </script>
+</body>
+
+</html>

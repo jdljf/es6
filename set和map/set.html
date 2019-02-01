@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // set 类似数组，只有值没有键 key
+        // 但是会默认去重
+        console.log(new Set([1,2,3,4,5,6,1,2,3,4]))
+
+        // size Set实例的长度
+        // add 增加，之前没有就增加，返回增加后的实例
+        let set1 = new Set([1,2, '哈哈',null, NaN,true])
+        console.log(set1.add(4).add(100));  // 一次只能加一个
+
+        // delete 删除成功 true/false
+        console.log(set1.delete(100));
+        
+        // clear 清空 没有返回值 undefined
+        console.log(set1.clear());
+        
+        // has 判断有没有此项
+        let set2 = new Set([1,2, '哈哈',null, NaN,true])
+        console.log(set2.has(NaN)); // true
+        
+        // forEach 遍历
+        set2.forEach((...rest)=>{
+            // Set 实例只有 value 没有 key
+            // item, index, 当前 value
+            // input 当前 Set 实例
+            console.log(rest);            
+        })
+
+        for (let [item, index] of set2.entries()) {
+            console.log(item, index);            
+        }
+    </script>
+</body>
+
+</html>

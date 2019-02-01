@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=dege" />
+	</head>
+
+	<body>
+		<script>
+			// var function 变量提升
+			// var 只会提前声明 不会提前定义	function既声明又定义
+			console.log(a);			// undefined
+			console.log(getA);
+			
+			var a = 1;
+			function getA() {
+				
+			}
+
+			var a = 2;
+			console.log(window.a);
+			// 判断 getA 是否在window中
+			console.log('getA' in window);
+			
+		</script>
+
+		<script>
+			function getB() {
+				var  b = 1
+				console.log(window.b);				
+			}
+			getB()
+		</script>
+	</body>
+
+</html>

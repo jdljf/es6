@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=dege" />
+	</head>
+
+	<body>
+		<script>
+            // 在块级作用域中 var 和 function 声明的变量依然是全局的
+			{
+                let b = 1;
+                const c = 3;
+                var a = 1;
+                function getA() {
+                    
+                }
+            }
+            console.log(a);
+            // console.log(b); // b is not defiend
+            console.log(c); // c is not defiend
+            
+            
+		</script>
+	</body>
+
+</html>

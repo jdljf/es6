@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // 数组去重 
+        let ary = [1,1,2,3,4,2,11,21,22,22,14,6]
+
+        function unique(ary) {
+            return [...new Set(ary)]
+            // return Array.from(new Set(ary))
+        }
+        console.log(unique(ary));
+        
+        let ary2 = [1,3,5,7,8,9]
+        let ary3 = [2,4,6,7,8,9]
+
+        // 并集
+        function add(ary1, ary2) {
+            return [...new Set([...ary1, ...ary2].sort())]
+        }
+        console.log(add(ary2, ary3));
+        
+        // 交集
+        function same(ary1, ary2) {
+            return ary1.filter(item=>ary2.includes(item))
+        }
+        console.log(same(ary2, ary3));
+        
+        // 差集 = 并集 - 交集
+        function diff(ary1, ary2) {
+            return add(ary1, ary2).filter(item =>!same(ary1, ary2).includes(item))
+        }
+        console.log(diff(ary2, ary3))
+
+    </script>
+</body>
+
+</html>

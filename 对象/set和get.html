@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        let obj = {
+            _name:'',
+            get name(){
+                // 只要通过 obj 获取 name 属性就会触发这个 get 函数
+                // 可以通过 return 返回值
+                console.log(1);
+                return this._name                
+            },
+            set name(value){
+                // 只要通过 obj 给name 属性设置值就会触发这个 set 函数
+                console.log(2);
+                this._name = value
+            }
+        }
+
+        console.log(obj.name);
+        obj.name = '廖峻锋'
+        console.log(obj.name);
+        
+    </script>
+</body>
+
+</html>

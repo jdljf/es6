@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // 使用数组结构赋值等号右边不是一个数组就把他变成一个类数组
+        // (类似数组的对象)，必须有一个 length 属性
+        let [x1, x2] = '123'
+        // let [x, y] = 1
+        console.log(x1, x2);
+        // console.log(x, y);  // 1 is not iterable            
+
+        
+        let {a} = Object(1)
+        console.log(a);
+    </script>
+</body>
+
+</html>

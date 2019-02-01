@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // 1. includes 返回布尔值
+        // 判断字符串中有没指定字符
+        // includes('指定字符', 开始查找的位置(可选))
+
+        let str = 'abcdefg123456'
+        // 第二噶参数不是数字默认转成数字 Number()
+        console.log(str.includes('a', null));
+
+
+        // starstWith、endsWith
+        // startsWith判断字符串是否以指定字符作为开头
+        // startsWith('指定字符', 开始的位置)
+
+        console.log(str.startsWith('d', 3));
+        // endsWith判断字符串是否以指定字符作为结尾
+        // endsWith('指定字符', 从前m个开始查看)
+        console.log(str.endsWith('6'));
+        console.log(str.endsWith('c', 3));  // abc中是否是c结尾
+
+        // repeat(num)  将字符串重复num次
+        // num是整数且不能是负数
+        console.log(str.repeat(2)); // abcdefg123456abcdefg123456
+        // 0到-1直接 取整0
+        console.log(str.repeat(0));
+        
+
+        // padStart padEnd  (es7)
+        // 按照指定字符串补全字符串的指定长度
+        // padStart/endStart(length, '指定字符')
+        let str1 = 'ab'
+        console.log(str1.padStart(7, 'ghk'));   // ghkghab
+        console.log(str1.padEnd(7, 'ghk'));     // abghkgh
+        
+        
+    </script>
+</body>
+
+</html>

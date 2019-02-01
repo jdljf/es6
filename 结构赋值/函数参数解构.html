@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        function getA(a, b, c, ...d) {
+
+        }
+        getA([1, 2, 3, 4, 5])
+
+        function getB1({ name = 'ljf', age = 100 } = {}) {
+            console.log(name, age);
+
+        }
+
+        function getB2({ name, age } = { name: 'ljf', age: 100 }) {
+            console.log(name, age);
+
+        }
+        getB1()     // ljf, 100
+        getB2()     // ljf, 100
+        getB1({})   // ljf, 100
+        getB2({})   // udefined, undefined
+    </script>
+</body>
+
+</html>

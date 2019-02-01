@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=dege" />
+	</head>
+
+	<body>
+		<script>
+			// 和var 对比 
+			// 1. let 没有变量提升，
+			// 2. let不能重复声明
+			// 3. let不会给window增加属性
+			console.log(a);	// a is not defined
+			
+			let a = 1;
+
+			let a = 2;	// Identifier 'a' has already been declared
+			console.log('a' in window)
+		</script>
+	</body>
+
+</html>

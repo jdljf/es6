@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // symble 是一个新的基本数据类型， 而且是一个值类型的
+        //  使用 Symble 函数执行得到一个 Symble 数据类型
+        //  和字符串差不多，但是使用Symbol函数得到一个数据，每一个数据是完全不同的
+        //  Symbol可以接受一个参数，用于对这个Symbol的描述
+        let sym1 = Symbol()
+        let sym2 = Symbol()
+        console.log(typeof sym1);   // Symbol
+        console.log(sym1);
+        console.log(sym2);
+        console.log(sym1 == sym2);  // false
+        
+        // Symbol 不能和其他值计算，不能转数字，不能拼接字符串，但是可以转成布尔值
+        // console.log(Symbol('1') + 1);   // 报错
+        // console.log(Number(Symbol(1)));     // 报错
+        console.log(!Symbol('1'));
+        // 可以toString 变成显示字符串
+        console.log(Symbol('1').toString());
+        
+        // 使用Symbol.for() 参数相同，值就相同
+        let zf2 = Symbol.for('zhufeng')
+        let zf3 = Symbol.for('zhufeng')
+        console.log(zf2 == zf3);
+        // Symbol.keyFor( symbol值 )，找到使用Symbol.for创建描述的值
+        // 如果使用Symbol创建的是获取不到的
+        console.log(Symbol.keyFor(zf3));    // zhufeng
+        console.log(Symbol.keyFor(sym1));   // undefined
+            
+            
+        </script>
+</body>
+
+</html>

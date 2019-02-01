@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        function getA(x, y) {
+            x = x || 'hello',   // 我们想x = 0 但是 x = 珠峰
+                y = y || 'world'
+            console.log(x, y);
+
+        }
+        getA(0)
+
+        // 参数解构赋值
+        function get(x = 'hello', y = "girl") {
+            console.log(x, y);
+        }
+        get()
+
+        // lenght属性，当前形参个数，如果形参有默认值，length就会变成没有默认值的形参个数
+        function fn2(x, y) {
+            
+        }
+
+        fn2(1,2)
+        console.log(fn2.length);
+        
+        // 参数的默认值一般放在后面
+        function fn3(x=10,y=20) {
+            console.log(x,y);
+            
+        }
+        // fn3(undefined, 1) 如果我想传x默认值时y不走默认值这么写就会报错
+
+        // arguments 类数组
+        function fn4() {
+            console.log(arguments);            
+        }
+        fn4(1,2,3,4)
+
+        // 或者用以下
+        function fn5(...arg) {
+            console.log(arg);
+            
+        }
+        fn5(1,2,3,4)
+
+        // 参数作用域问题
+        function fn5(x,y) {
+            
+        }
+    </script>
+</body>
+
+</html>
