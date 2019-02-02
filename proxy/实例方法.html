@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // set(target, propKey, value, receiver)
+        let obj = { name: '珠峰' }
+        let proxy1 = new Proxy(obj, {
+            get(target, propKey, receiver) {
+                return target[propKey]
+            },
+            set(target, propKey, value, receiver) {
+                // propKey: 设置的属性名
+                // value: 设置的属性值
+                target[propKey] = value
+                return true
+            },
+            has(target, propKey) {
+                // 判断是否以下划线为开头
+                if (propKey.startsWith("_")) {
+                    return false
+                }
+                return propKey in target
+            },
+            apply(target, object, args){
+
+            }
+        })
+
+        proxy1.age =10
+        console.log(obj);
+        console.log('name' in proxy1);
+        
+
+
+        function getB() {
+            return {name: '珠峰'}
+        }
+
+        let proxy2 = new Proxy(getB, {
+            apply(target, object, args){
+                // target: 函数的内容
+                // args: 函数执行的参数
+                // object 给函数修改this
+                console.log(target, object, args);
+                if (object) {
+                    object.__proto__fn = target
+                    object.fn(...args)
+                    delete object.__proto__.fn
+                }
+                else {
+                    target(...args)
+                }
+            }
+        })
+
+        proxy2(1,2,3)
+    </script>
+</body>
+
+</html>
