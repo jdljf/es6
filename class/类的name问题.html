@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        let A = class AA{
+            // AA只能在类里面使用 类的name都是AA
+            constructor(){
+                console.log(AA.name);                
+            }
+        }
+
+        // let a = new AA() // 不可以使用AA
+        let a = new A()
+    </script>
+</body>
+
+</html>
