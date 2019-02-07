@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // 类相当于原型，写在原型上的方法都被实例继承
+        // 假如想给当前类本身加一些方法？？我们可以在方法前面加上一个关键字 static，不会被实例基础，只有类本身可以使用
+        class AA{
+            constructor(){
+                this.a = 'aaa'
+            }
+            getA(){
+                console.log('哈哈');
+
+            }
+            static getB(){
+                console.log('我是AA的静态方法');                
+            }
+        }
+
+        let aa = new AA()
+        console.log(aa);
+        aa.getA()
+        // aa.getB()   // aa.getB is not a function
+        AA.getB()
+
+        // 静态方法可以被子类继承
+        class F{
+            getF1(){
+                console.log('我是F的getF1')
+            }
+            static getF(){
+                console.log('我是F的getF')
+            }
+        }
+
+        class G extends F{
+            constructor(){
+                super()
+            }
+            getG1(){
+                super.getF1()
+            }
+            // 静态方法只能被静态方法调用，原型的方法也只能被原型方法调用
+            static getG(){
+                super.getF()
+                // super.getF1()
+            }
+        }
+        let g = new G()
+
+        g.getG1()
+        G.getG()
+    </script>
+</body>
+
+</html>

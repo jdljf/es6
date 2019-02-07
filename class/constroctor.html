@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // function Fn() {
+        //     this.x =10
+        // }
+        // Fn.prototype.getX=function(){}
+        // let f = new Fn()
+        // Fn()
+
+        class A {
+            constructor(x){
+                this.x = x
+                // return 的是基本数据类型对实例没有影响，如果是引用数据类型会改变实例
+            }
+        }
+
+        let a = new A(10)
+        console.log(a);
+        // A() // 类必须使用new 执行，不可作为普通函数执行
+    </script>
+</body>
+
+</html>
