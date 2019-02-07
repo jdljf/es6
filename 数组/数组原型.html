@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        // copyWithin 从原数组中读取内容 替换数组的指定位置的内容 原数组会变
+        // copyWithin(替换的目标的起始位置target, 查找的起始位置begin, 查找的结束位置end)
+        let arr = [1,2,3,4,5,6,7,8]
+        console.log(arr.copyWithin(4, 2, 4))
+        console.log(arr.copyWithin(3,2))
+        console.log(arr);
+        
+        // fill 按照指定字符填充数组指定位置
+        console.log(arr.fill('珠峰', 3, 5));
+        console.log(arr);
+                
+        // filter 遍历数组，根据返回值过滤数组，原数组不变
+        let ary3 = ['珠峰',1,2,3,'珠峰']
+        let arr3 = ary3.filter(function (item, index) {
+            return typeof item === 'number'
+        })
+
+        console.log(arr3);
+        console.log(ary3);
+        
+        // find 先遍历数组 一旦参数函数返回 true 停止查找 返回当前项
+        let arr4 =ary3.find(function (item, index) {
+            return typeof item === 'number'
+        })
+        console.log(arr4);
+        
+        // findIndex
+        let arr5 =ary3.findIndex(function (item, index) {
+            return typeof item === 'string'
+        })
+        console.log(arr5);
+
+        // includes 判断数组中有没某项
+        console.log([1,2,3].includes(1))
+ 
+        // every 遍历数组，如果遍历每一项都返回true,最后结果返回true,否则返回false
+        console.log([1,2,3,4,5,'珠峰'].every(function (item, index) {
+            return typeof item === 'number'
+        }));
+
+        // some 遍历数组，只要有一项是 true 就返回true,否则返回false
+        console.log([1,2,3,4,5,'珠峰'].some(function (item, index) {
+            return typeof item === 'string'
+        }));
+
+        // reduce 迭代 第二个参数作为初始的 prev
+        console.log([1,2,3,4,5].reduce(function (prev, item) {
+            // prev 是上一次返回的值，item是当前项
+            return prev + item  // 求和
+        }, 10));
+        
+        // reduceRight  和reduce相同只是顺序从右开始
+        // keys 遍历 每一项的索引接口 使用for of 遍历
+        let ary5 = [1,2,3,4]
+        for(let key of ary5.keys()){
+            console.log(key);            
+        }
+
+        // 默认使用for of 遍历数组就是遍历每一项
+        for (const item of ary5) {
+            console.log(item);            
+        }
+
+        // entries 遍历接口，可以遍历到索引和每一项
+        // 每次遍历得到一个数组 [索引， 当前项]
+        for (const [index, item] of ary5.entries()) {
+            console.log(index, item);
+            
+        }
+    </script>
+</body>
+
+</html>
