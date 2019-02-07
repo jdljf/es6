@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        FF()
+        new FF()
+
+        function FF() {
+            this.f = 'ff'
+        }
+
+        // new GG   // GG is not defined
+        // 证明了 class 没有变量提升
+        class GG{
+            constructor(){
+                this.gg = 'gg'
+            }
+        }
+        new GG
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        function F() {
+            this.f = 'ff'
+        }
+        F.prototype.getF = function () {
+            console.log('我是原型上的方法');
+            
+        }
+        let f = new F
+        // 只要能用for in 遍历出来的都是可枚举
+        for(let key in f){
+            console.log(key);   // f getF            
+        }
+
+
+        class AA{
+            constructor(){
+                this.a = 'aa'
+            }
+            getA(){
+                console.log('我是原型上的方法');
+            }
+        }
+
+        let aa = new AA()
+        for(let key in aa) {
+            console.log(key);   // a
+            
+        }
+
+        console.log(Object.getOwnPropertyDescriptor(AA.prototype,'getA'))
+    </script>
+</body>
+
+</html>
