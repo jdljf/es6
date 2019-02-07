@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=dege" />
+</head>
+
+<body>
+    <script>
+        class A{
+            constructor(x){
+                this.x = x
+            }
+            getX(){
+                console.log(this.x);
+            }
+            static getY(){
+                console.log(this);
+            }
+        }
+
+        let a = new A
+        A.getY()
+        // 子类B继承父类A
+        class B extends A {
+            constructor(x){
+                // 子类没有 this ，this继承父类 super();执行完成以后才会有this
+                // 1. super就是父类A的constroctor
+                // this.y = 100;    不可以在super执行之前使用this
+                super(x)
+                this.y =100
+            }
+            getX(){
+                // 2. super 指向父类A的原型
+                super.getX()
+            }
+            // 父类的静态方法也可以继承
+            static getY(){
+                // 3. super 指向父类A的本身
+                super.getY()
+            }
+        }
+
+        let b = new B('珠峰')
+        b.getX()
+        B.getY()
+    </script>
+</body>
+
+</html>
